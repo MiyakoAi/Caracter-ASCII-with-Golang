@@ -25,7 +25,7 @@ func main() {
 	}
 
 	// Resize
-	const targetW = 100 // lebar
+	const targetW = 300 // lebar
 	bounds := srcImg.Bounds()
 	w := bounds.Dx()
 	h := bounds.Dy()

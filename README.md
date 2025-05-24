@@ -11,7 +11,8 @@ Run :
 Photo :
 ![alt text](Hoshimachi-Suisei.png)
 
-Result Ascii with width 300 :
+Result Ascii with width 300 : 
+
 ![alt text](<Cuplikan layar 2025-05-24 084645.png>)
 
 Result Ascii with width 500 :

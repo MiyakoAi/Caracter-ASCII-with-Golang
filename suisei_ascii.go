@@ -13,7 +13,7 @@ import (
 )
 
 func main() {
-	f, err := os.Open("Hoshimachi-Suisei.png") // file foto
+	f, err := os.Open("Hoshimachi-Suisei.png")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -24,23 +24,26 @@ func main() {
 		log.Fatal(err)
 	}
 
-	// Resize
-	const targetW = 300 // lebar
+	const targetW = 100 // resolusi
 	bounds := srcImg.Bounds()
 	w := bounds.Dx()
 	h := bounds.Dy()
-	targetH := (targetW * h) / w / 2 // tinggi font
+	targetH := (targetW * h) / w / 2 // rasio
 
 	dst := image.NewRGBA(image.Rect(0, 0, targetW, targetH))
 	draw.ApproxBiLinear.Scale(dst, dst.Bounds(), srcImg, bounds, stdDraw.Over, nil)
 
-	// Karakter ASCII
 	asciiChars := "@%#*+=-:. "
 
-	// Loop piksel
 	for y := 0; y < targetH; y++ {
 		for x := 0; x < targetW; x++ {
-			r, g, b, _ := dst.At(x, y).RGBA()
+			r, g, b, a := dst.At(x, y).RGBA()
+
+			if a < 0x8000 {
+				fmt.Print(" ")
+				continue
+			}
+
 			brightness := uint8((r*299 + g*587 + b*114 + 500) / 1000 >> 8)
 			index := int(brightness) * (len(asciiChars) - 1) / 255
 			fmt.Printf("%c", asciiChars[index])

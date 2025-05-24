@@ -20,3 +20,7 @@ Result Ascii with width 500 :
 
 Result Ascii with width 1000 :
 ![alt text](<Cuplikan layar 2025-05-24 082934.png>)
+
+Update Code with Ascii width 1100  :
+
+![alt text](<Cuplikan layar 2025-05-24 093156.png>)

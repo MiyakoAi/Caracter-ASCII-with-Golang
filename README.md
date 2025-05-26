@@ -1,7 +1,7 @@
 # Caracter-ASCII-with-Golang
 
 Install depedency :
-- ```go get golang.org/x/image/draw```   
+- ```go get golang.org/x/image/draw```  
 
 Run :
 - ```go run suisei_ascii.go > suisei.txt```
